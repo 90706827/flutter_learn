@@ -7,7 +7,7 @@ class UserInfo {
     this.displayName,
   });
 
-  factory UserInfo.formJson(Map<String, dynamic> json) => UserInfo(
+  factory UserInfo.fromJson(Map<String, dynamic> json) => UserInfo(
         accessToken: json["access_token"],
         displayName: json["display_name"],
       );

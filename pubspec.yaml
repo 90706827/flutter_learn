@@ -30,8 +30,14 @@ dependencies:
   package_info: ^0.4.3+2
   # 设备信息
   device_info: ^1.0.0
-  #
+  # 状态管理
   provider: ^4.3.2+3
+  # 缓存storage + cache
+  shared_preferences: ^0.5.12+4
+  # 网络请求
+  dio: ^3.0.10
+  cookie_jar: ^1.0.1
+  dio_cookie_manager: ^1.0.0
 
 dev_dependencies:
   flutter_test:
