@@ -1,6 +1,6 @@
 class Param {
   static const String deviceFirstOpen = "device_first_open";
-  static const String userProfile = "user_profile";
+  static const String userLogin = "user_login";
 
   //链接服务器地址
   static const String serverApiUrl = 'http://localhost:8080';

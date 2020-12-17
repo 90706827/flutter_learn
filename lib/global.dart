@@ -38,7 +38,7 @@ class Global {
   // 持久化用户信息
   static Future<bool> saveProfile(UserInfo userInfo) {
     userLogin = userInfo;
-    return StorageUtil().setJson(Param.userProfile, userInfo.toJson());
+    return StorageUtil().setJson(Param.userLogin, userInfo.toJson());
   }
 
   static Future init() async {
@@ -62,9 +62,9 @@ class Global {
       StorageUtil().setBool(Param.deviceFirstOpen, true);
     }
     // 读取离线用户信息
-    var profileInfo = StorageUtil().getJson(Param.userProfile);
-    if (profileInfo != null) {
-      userLogin = UserInfo.fromJson(profileInfo);
+    var userInfo = StorageUtil().getJson(Param.userLogin);
+    if (userInfo != null) {
+      userLogin = UserInfo.fromJson(userInfo);
       firstOpen = true;
     }
 
