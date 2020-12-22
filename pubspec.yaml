@@ -40,6 +40,8 @@ dependencies:
   dio_cookie_manager: ^1.0.0
   # 路由管理
   auto_route: ^0.6.9
+  # 屏幕适配
+  flutter_screenutil: ^4.0.2+1
 
 dev_dependencies:
   flutter_test:
@@ -57,8 +59,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - static/image/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

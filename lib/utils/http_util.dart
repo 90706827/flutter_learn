@@ -1,10 +1,12 @@
-import 'dart:html';
+import 'dart:io';
 
 import 'package:cookie_jar/cookie_jar.dart';
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
-import 'package:flutter_learn/config/parameter.dart';
+import 'package:flutter_learn/config/app_param.dart';
 import 'package:flutter_learn/exception/error_exception.dart';
+import 'package:flutter_learn/global.dart';
 import 'package:flutter_learn/utils/auth.dart';
 
 import 'net_cache.dart';
@@ -22,9 +24,9 @@ class HttpUtil {
   HttpUtil.internal() {
     BaseOptions options = new BaseOptions(
       //请求地址
-      baseUrl: Param.serverApiUrl,
-      connectTimeout: Param.connectTimeout,
-      receiveTimeout: Param.receiveTimeout,
+      baseUrl: AppParam.serverApiUrl,
+      connectTimeout: AppParam.connectTimeout,
+      receiveTimeout: AppParam.receiveTimeout,
       headers: {},
       // 请求的Content-Type，默认值是"application/json; charset=utf-8"
       contentType: Headers.jsonContentType,
@@ -65,8 +67,20 @@ class HttpUtil {
       },
     ));
 
-    //加内存缓存
+    //增加缓存
     dio.interceptors.add(NetCache());
+    // 在调试模式下需要抓包调试 所以我们使用代理，并禁用HTTPS证书校验
+    if (!Global.release && AppParam.proxyEnable) {
+      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+          (client) {
+        client.findProxy = (uri) {
+          return "PROXY ${AppParam.proxyIP}:${AppParam.proxyPort}";
+        };
+        //代理工具会提供一个抓包的签名证书，会通不过证书校验，所有我们禁用证书校验
+        client.badCertificateCallback =
+            (X509Certificate cert, String host, int port) => true;
+      };
+    }
   }
 
   ErrorException errorException(DioError error) {
