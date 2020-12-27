@@ -9,7 +9,8 @@ class WelcomePage extends StatelessWidget {
   /// 页头标题
   Widget _buildPageHeadTitle() {
     return Container(
-      margin: EdgeInsets.only(top: duSetHeight(60 + 44.0)), // 顶部系统栏 44px
+      margin: EdgeInsets.only(top: Screen().duSetHeight(60 + 44.0)),
+      // 顶部系统栏 44px
       child: Text(
         "Features",
         textAlign: TextAlign.center,
@@ -17,7 +18,7 @@ class WelcomePage extends StatelessWidget {
           color: AppColors.primaryText,
           fontFamily: "Montserrat",
           fontWeight: FontWeight.w600,
-          fontSize: duSetFontSize(24),
+          fontSize: Screen().duSetFontSize(24),
           height: 1,
         ),
       ),
@@ -27,13 +28,13 @@ class WelcomePage extends StatelessWidget {
   /// 开始按钮
   Widget _buildStartButton(BuildContext context) {
     return Container(
-      width: duSetWidth(295),
-      height: duSetHeight(44),
-      margin: EdgeInsets.only(bottom: duSetHeight(20)),
+      width: Screen().duSetWidth(295),
+      height: Screen().duSetHeight(44),
+      margin: EdgeInsets.only(bottom: Screen().duSetHeight(20)),
       child: FlatButton(
         color: AppColors.primaryElement,
         textColor: AppColors.primaryElementText,
-        child: Text("Get started"),
+        child: Text("开始"),
         shape: RoundedRectangleBorder(
           borderRadius: AppRadii.k6pxRadius,
         ),
@@ -46,6 +47,21 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              "welcome",
+              style: TextStyle(
+                color: AppColors.primaryText,
+                fontSize: Screen().duSetFontSize(16),
+              ),
+            ),
+            _buildStartButton(context),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -23,7 +23,7 @@ Future<void> main() async {
       child: Consumer<AppState>(builder: (context, appState, _) {
         if (appState.getGray) {
           return ColorFiltered(
-            colorFilter: ColorFilter.mode(Colors.white, BlendMode.color),
+            colorFilter: ColorFilter.mode(Colors.black12, BlendMode.color),
             child: NewsApp(),
           );
         } else {

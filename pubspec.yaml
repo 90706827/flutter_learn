@@ -42,6 +42,9 @@ dependencies:
   auto_route: ^0.6.9
   # 屏幕适配
   flutter_screenutil: ^4.0.2+1
+  # 权限
+  permission_handler: ^5.0.1+1
+
 
 dev_dependencies:
   flutter_test:

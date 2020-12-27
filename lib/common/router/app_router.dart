@@ -44,7 +44,7 @@ class AppRouter extends RouterBase {
   };
 
   @override
-  Map get pagesMap => _pagesMap;
+  Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
 
   @override
   List<RouteDef> get routes => _routes;

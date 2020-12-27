@@ -30,8 +30,11 @@ class Global {
   /// 是否第一次打开
   static bool firstOpen = false;
 
+  // 是否离线登录
+  static bool offLineLogin = false;
+
   // 应用状态
-  static AppState appState = AppState();
+  static AppState appState = AppState(gray: true);
 
   // 是否 release
   static bool get release => bool.fromEnvironment("dart.vm.product");
@@ -68,7 +71,7 @@ class Global {
     var userInfo = StorageUtil().getJson(AppParam.userLogin);
     if (userInfo != null) {
       userLogin = UserInfo.fromJson(userInfo);
-      firstOpen = true;
+      offLineLogin = true;
     }
     // android 状态栏为透明的沉浸
     // if (Platform.isAndroid) {
