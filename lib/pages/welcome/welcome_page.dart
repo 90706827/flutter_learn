@@ -9,7 +9,7 @@ class WelcomePage extends StatelessWidget {
   /// 页头标题
   Widget _buildPageHeadTitle() {
     return Container(
-      margin: EdgeInsets.only(top: Screen().duSetHeight(60 + 44.0)),
+      margin: EdgeInsets.only(top: setHeight(60 + 44.0)),
       // 顶部系统栏 44px
       child: Text(
         "Features",
@@ -18,7 +18,7 @@ class WelcomePage extends StatelessWidget {
           color: AppColors.primaryText,
           fontFamily: "Montserrat",
           fontWeight: FontWeight.w600,
-          fontSize: Screen().duSetFontSize(24),
+          fontSize: setFontSize(24),
           height: 1,
         ),
       ),
@@ -28,9 +28,9 @@ class WelcomePage extends StatelessWidget {
   /// 开始按钮
   Widget _buildStartButton(BuildContext context) {
     return Container(
-      width: Screen().duSetWidth(295),
-      height: Screen().duSetHeight(44),
-      margin: EdgeInsets.only(bottom: Screen().duSetHeight(20)),
+      width: setWidth(295),
+      height: setHeight(44),
+      margin: EdgeInsets.only(bottom: setHeight(20)),
       child: FlatButton(
         color: AppColors.primaryElement,
         textColor: AppColors.primaryElementText,
@@ -55,7 +55,7 @@ class WelcomePage extends StatelessWidget {
               "welcome",
               style: TextStyle(
                 color: AppColors.primaryText,
-                fontSize: Screen().duSetFontSize(16),
+                fontSize: setFontSize(16),
               ),
             ),
             _buildStartButton(context),

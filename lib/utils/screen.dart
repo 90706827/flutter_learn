@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/screenutil.dart';
+
 /*
   ScreenUtil.pixelRatio       //设备的像素密度
     ScreenUtil.screenWidth      //设备宽度
@@ -10,20 +11,18 @@ import 'package:flutter_screenutil/screenutil.dart';
     ScreenUtil().scaleWidth  // 实际宽度的dp与设计稿px的比例
     ScreenUtil().scaleHeight // 实际高度的dp与设计稿px的比例
 */
-class Screen {
-  /// 设置宽度
-  double duSetWidth(double width) {
-    return ScreenUtil().setWidth(width);
-  }
 
-  /// 设置宽度
-  double duSetHeight(double height) {
-    return ScreenUtil().setHeight(height);
-  }
+/// 设置宽度
+double setWidth(double width) {
+  return ScreenUtil().setWidth(width);
+}
 
-  /// 设置字体尺寸
-  double duSetFontSize(double fontSize) {
-    return ScreenUtil().setSp(fontSize);
-  }
+/// 设置宽度
+double setHeight(double height) {
+  return ScreenUtil().setHeight(height);
+}
 
+/// 设置字体尺寸
+double setFontSize(double fontSize) {
+  return ScreenUtil().setSp(fontSize);
 }

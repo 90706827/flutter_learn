@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_learn/common/update/AppUpdateUtil.dart';
 import 'package:flutter_learn/global.dart';
+import 'package:flutter_learn/pages/application/application_page.dart';
 import 'package:flutter_learn/pages/sign_in/sign_in_page.dart';
 import 'package:flutter_learn/pages/welcome/welcome_page.dart';
 import 'package:flutter_screenutil/screenutil_init.dart';
@@ -42,8 +43,8 @@ class _IndexPageState extends State<IndexPage> {
       child: Scaffold(
         body: Global.firstOpen == true
             ? WelcomePage()
-            : Global.offLineLogin == true
-                ? SignInPage()
+            : Global.offLineLogin == false
+                ? ApplicationPage()
                 : SignInPage(),
       ),
     );

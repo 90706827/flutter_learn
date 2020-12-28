@@ -89,5 +89,19 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: static/fonts/Avenir-Book.ttf
+          weight: 400 # normal
+    - family: Montserrat
+      fonts:
+        - asset: static/fonts/Montserrat-Medium.ttf
+          weight: 500
+        - asset: static/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+    - family: Iconfont
+      fonts:
+        - asset: static/fonts/iconfont.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
